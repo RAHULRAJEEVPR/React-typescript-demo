@@ -23,6 +23,7 @@ import RandomNumber from './components/restrictions/RandomNumber';
 import Toast from './components/templateliterals/Toast';
 import Inputs from './components/html/Inputs';
 import Buttons from './components/html/Buttons';
+import Text from './components/polymorphic/Text';
 
 function App() {
   const personName={
@@ -76,6 +77,7 @@ function App() {
     click me
   </Buttons>
   <Inputs/>
+  <Text as="h2" size='lg' >Heading</Text>
     </div>
   );
 }

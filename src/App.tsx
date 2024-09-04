@@ -1,5 +1,5 @@
 
-import { log } from 'console';
+
 import './App.css';
 import Button from './components/Button';
 import Greet from './components/Greet';
@@ -11,6 +11,18 @@ import Status from './components/Status';
 import Input from './components/Input';
 import Container from './components/Container';
 import CounterUseReducer from './components/state/CounterUseReducer';
+import ThemeContextProvider from './components/context/ThemeContext';
+import Box from './components/context/Box'
+import UserContextProvider from './components/context/UserContext';
+import User from './components/context/User';
+import { Counter } from './components/class/Counter';
+import Private from './components/auth/Private';
+import Profile from './components/auth/Profile';
+import List from './components/generics/List';
+import RandomNumber from './components/restrictions/RandomNumber';
+import Toast from './components/templateliterals/Toast';
+import Inputs from './components/html/Inputs';
+import Buttons from './components/html/Buttons';
 
 function App() {
   const personName={
@@ -48,6 +60,22 @@ function App() {
 <Input value='' handleChange={e=>console.log(e.target.value)}/>
 <Container style={{border:"3px solid black",padding:"1rem"}}/>
 <CounterUseReducer/>
+<ThemeContextProvider>
+  <Box/>
+</ThemeContextProvider>
+<UserContextProvider>
+  <User/>
+</UserContextProvider>
+<Counter message='class message'/>
+<Private isLoggedin={true} component={Profile}/>
+<List items={["batman","superman","Spiderman"]} onClick={(item)=>console.log(item)}/>
+<List items={[1,2,3]} onClick={(item)=>console.log(item)}/>
+  <RandomNumber value={10} isPositive/>
+  <Toast postion='right-bottom'/>
+  <Buttons variant='primary' onClick={()=>console.log("button click") }>
+    click me
+  </Buttons>
+  <Inputs/>
     </div>
   );
 }
